@@ -107,6 +107,7 @@ main {
 .delete-modal__cancel {
   min-width: 80px;
   min-height: 32px;
+  /* re-visit */
   border: 2px solid var(--color-background-dark);
   border-radius: var(--border-radius-small);
 }

@@ -37,6 +37,16 @@ const audioFields = [
 ];
 
 // Adding event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  Ui.displayAddModal(
+    openAddModalButton,
+    formModal,
+    printedBookContainer,
+    audioBookContainer
+  );
+  Ui.closeAddModal(closeAddModalButton, formModal);
+});
+
 bookTypeDropdown.addEventListener("change", () => {
   Ui.toggleBookTypeFields(
     printedBookContainer,
