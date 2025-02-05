@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/variables.css" />
     <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./src/css/form.css" />
     <title>Vite App</title>
   </head>
   <body>
-    <header>
-      <h1>Book Management Application</h1>
+    <header class="header">
+      <h1 class="header__title">Book Management Application</h1>
     </header>
     <main>
       <div class="collection">
@@ -28,7 +29,7 @@
             </button>
           </div>
           <div class="add-books">
-            <button class="add-book__button">Add</button>
+            <button class="add-books__button">Add</button>
           </div>
         </div>
         <div class="books">
@@ -96,7 +97,7 @@
 
         <!-- Form elements for the printed books -->
         <div class="form__printed-book">
-          <fieldset>
+          <fieldset class="form__category">
             <legend>Printed books details</legend>
             <div class="form__group">
               <label for="pages">Number of pages</label>
@@ -128,7 +129,7 @@
 
         <!-- Form elements for audio books -->
         <div class="form__audio-book">
-          <fieldset>
+          <fieldset class="form__category">
             <legend>Audio books details</legend>
             <div class="form__group">
               <label for="narrator">Narrator</label>
