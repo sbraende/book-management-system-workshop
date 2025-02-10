@@ -44,8 +44,12 @@ class BookManager {
     // localStorage.setItem("")
 
     this.booksCollection.push(book);
-    console.log(this.booksCollection);
+    this.storeBooks(this.booksCollection);
   }
+
+  static storeBooks = (collection) => {
+    localStorage.setItem("books-collection", JSON.stringify(collection));
+  };
 }
 
 export default BookManager;
