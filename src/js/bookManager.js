@@ -46,7 +46,8 @@ class BookManager {
 
     this.booksCollection.push(book);
     this.storeBooks(this.booksCollection);
-    Ui.renderBooks();
+    // TODO: Is this needed?
+    // Ui.renderBooks();
   }
 
   static storeBooks = (collection) => {
