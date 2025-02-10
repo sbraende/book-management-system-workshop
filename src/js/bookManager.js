@@ -1,5 +1,6 @@
 import AudioBook from "./audioBook";
 import PrintedBook from "./printedBooks.js";
+import Ui from "./ui.js";
 
 class BookManager {
   static booksCollection =
@@ -45,6 +46,7 @@ class BookManager {
 
     this.booksCollection.push(book);
     this.storeBooks(this.booksCollection);
+    Ui.renderBooks();
   }
 
   static storeBooks = (collection) => {
