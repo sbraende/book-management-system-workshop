@@ -44,15 +44,27 @@ class BookManager {
     // BookManager.booksCollection
     // localStorage.setItem("")
 
-    this.booksCollection.push(book);
-    this.storeBooks(this.booksCollection);
-    // TODO: Is this needed?
-    // Ui.renderBooks();
+    BookManager.booksCollection.push(book);
+    BookManager.storeBooks(BookManager.booksCollection);
   }
 
   static storeBooks = (collection) => {
     localStorage.setItem("books-collection", JSON.stringify(collection));
   };
+
+  static deleteBook(id) {
+    // const booksCollection = JSON.parse(
+    //   localStorage.getItem("books-collection")
+    // );
+    // const filteredBook = booksCollection.filter((book) => book.id !== id);
+    // BookManager.storeBooks(filteredBook);
+
+    BookManager.booksCollection = BookManager.booksCollection.filter(
+      (book) => book.id !== id
+    );
+    BookManager.storeBooks(BookManager.booksCollection);
+    Ui.renderBooks();
+  }
 }
 
 export default BookManager;
