@@ -118,9 +118,9 @@ class Ui {
       dateHeader.textContent = "Publish date: ";
       typeHeader.textContent = "Book type: ";
       pagesOrNarratorHeader.textContent =
-        book.type === "printed-book" ? "Pages: " : "Narrator: ";
+        book.bookType === "printed-book" ? "Pages: " : "Narrator: ";
       printTypeOrDurationHeader.textContent =
-        book.type === "printed-book" ? "Print type: " : "Duration: ";
+        book.bookType === "printed-book" ? "Print type: " : "Duration: ";
       deleteButton.textContent = "🗑️";
       editButton.textContent = "✒️";
 
@@ -131,9 +131,8 @@ class Ui {
       type.textContent = book.bookType;
       pagesOrNarrator.textContent =
         book.bookType === "printed-book" ? book.pages : book.narrator;
-      printTypeOrDuration.textContent = "printed-book"
-        ? book.printType
-        : book.duration;
+      printTypeOrDuration.textContent =
+        book.bookType === "printed-book" ? book.printType : book.duration;
 
       // Classnames
       bookCard.classList.add("book__item");
