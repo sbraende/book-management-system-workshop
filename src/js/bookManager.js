@@ -53,6 +53,7 @@ class BookManager {
   };
 
   static deleteBook(id) {
+    // TODO: Try to get filteredBook logic to work
     // const booksCollection = JSON.parse(
     //   localStorage.getItem("books-collection")
     // );
@@ -64,6 +65,38 @@ class BookManager {
     );
     BookManager.storeBooks(BookManager.booksCollection);
     Ui.renderBooks();
+  }
+
+  static editBook(
+    id,
+    title,
+    author,
+    publisher,
+    date,
+    bookType,
+    pages,
+    printType,
+    narrator,
+    duration
+  ) {
+    const bookIndex = BookManager.booksCollection.findIndex(
+      (book) => book.id === id
+    );
+    if (bookIndex !== -1) {
+      BookManager.booksCollection[bookIndex] = {
+        id,
+        title,
+        author,
+        publisher,
+        date,
+        bookType,
+        pages,
+        printType,
+        narrator,
+        duration,
+      };
+    }
+    BookManager.storeBooks(BookManager.booksCollection);
   }
 }
 

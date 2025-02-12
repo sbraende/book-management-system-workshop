@@ -62,17 +62,35 @@ bookTypeDropdown.addEventListener("change", () => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  BookManager.addBook(
-    title.value.trim(),
-    author.value.trim(),
-    publisher.value.trim(),
-    date.value,
-    bookTypeDropdown.value,
-    pages.value.trim(),
-    printType.value,
-    narrator.value.trim(),
-    duration.value
-  );
+  if (!Ui.currentEditId) {
+    BookManager.addBook(
+      title.value.trim(),
+      author.value.trim(),
+      publisher.value.trim(),
+      date.value,
+      bookTypeDropdown.value,
+      pages.value.trim(),
+      printType.value,
+      narrator.value.trim(),
+      duration.value
+    );
+  } else {
+    BookManager.editBook(
+      Ui.currentEditId,
+      title.value.trim(),
+      author.value.trim(),
+      publisher.value.trim(),
+      date.value,
+      bookTypeDropdown.value,
+      pages.value.trim(),
+      printType.value,
+      narrator.value.trim(),
+      duration.value
+    );
+    Ui.currentEditId = null;
+    formModal.classList.remove("display-form");
+    formSubmitButton.textContent = "Add";
+  }
   Ui.renderBooks();
 });
 
